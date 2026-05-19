@@ -19,7 +19,7 @@ def clean_ingredients(nombre_plato, ingredientes):
     Returns:
         Una tupla (nombre_plato, set_de_ingredientes_sin_duplicados)
     """
-    pass  # Reemplazar con tu implementación
+    return(nombre_plato, set(ingredientes))
 
 
 def check_drinks(nombre_bebida, ingredientes):
@@ -36,8 +36,10 @@ def check_drinks(nombre_bebida, ingredientes):
     Returns:
         String con el nombre de la bebida seguido de "Cocktail" o "Mocktail"
     """
-    pass  # Reemplazar con tu implementación
-
+    for cosas in ingredientes:
+        if cosas in ALCOHOLS:
+            return f"{nombre_bebida} Cocktail"
+    return f"{nombre_bebida} Mocktail"
 
 def unique_chars(texto):
     """
@@ -52,7 +54,11 @@ def unique_chars(texto):
     Ejemplo:
         unique_chars("hello") -> {'h', 'e', 'l', 'o'}
     """
-    pass  # Reemplazar con tu implementación
+    s = set()
+    for letras in texto:
+        s.add(letras)
+    return s
+
 
 
 def sum_set(numeros):
@@ -73,9 +79,10 @@ def sum_set(numeros):
         sum_set({1, 2, 3, 4}) -> 10
         sum_set(set()) -> 0
     """
-    pass  # Reemplazar con tu implementación
-
-
+    i = 0
+    for cosas in numeros:
+        i += cosas
+    return i
 def common_elements(set_a, set_b):
     """
     Retorna un nuevo set con los elementos que aparecen en AMBOS sets.
@@ -95,4 +102,9 @@ def common_elements(set_a, set_b):
         common_elements({1, 2, 3}, {2, 3, 4}) -> {2, 3}
         common_elements({1, 2}, {3, 4}) -> set()
     """
-    pass  # Reemplazar con tu implementación
+    comun = set()
+    for element in set_a:
+        if element in set_b:
+            comun.add(element)
+    return comun
+
